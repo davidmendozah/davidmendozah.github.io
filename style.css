@@ -1,0 +1,995 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{ 
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+h3{
+    font-size: large;
+}
+section {
+   min-height: 100vh;
+   padding: 10rem 9% 2rem;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.menu-img {
+    width: 15.625em;  /* Ajusta el tamaño */
+    height: auto;
+    position: absolute;
+    left: 0; /* Mueve la imagen a la izquierda */
+    top: -5.625em; /* Mueve la imagen un poco hacia arriba */
+}
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active {
+   color: var(--main-color);  
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+/* Home Section */
+.home-img .overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/logo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5.7rem; /* Altura de bienvendios*/
+    text-align: center;
+    z-index: 1; 
+    top: 6%;  /*MODIFICADO*/
+}
+.home-img .overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa transparente */
+    z-index: -1; /* La capa se coloca detrás del texto */
+}
+.home-img .overlay h2 {
+    font-size: 60px; /*MODIFICADO*/
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.home .overlay h2 span {
+    font-size: 48px; /*MODIFICADO*/
+    color: #0ef;
+}
+.home p {
+    font-size: 1.8rem;
+    color: #f4f4f4;
+    line-height: 0.5;
+    margin: 10px 0;
+    text-align: justify;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Efecto de sombra */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+/* Estilos para el h3 en la sección Home */
+.home h3 {
+    font-size: 2.5rem; /* Tamaño de fuente llamativo */
+    font-weight: bold; /* Negrita */
+    color: #ffffff; /* Color blanco (ajústalo según el fondo) */
+    letter-spacing: 1.5px; /* Espaciado entre letras */
+    text-align: center; /* Centrar texto */
+    margin-top: 1rem; /* Espaciado superior */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+/* Línea decorativa debajo del h3 */
+.home h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #00bcd4; /* Color llamativo */
+    margin: 0.5rem auto;
+}
+/* Animación de entrada */
+.home h3 {
+    opacity: 0;
+    margin-top: -10px; /* Sube el h3 */
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+/* Definición de la animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.overlay h1{
+    margin-top: 1em;
+    font-size: 1.7rem; /*MODIFICADO*/
+    
+}
+.overlay a{
+    margin-top: 10px;
+    font-size: 1.3rem; 
+}
+.overlay p{
+    text-align: center;
+    line-height: 1.3;
+}
+/* Estilos para los botones */
+.btn {
+    box-shadow: none; /* Elimina la sombra cuando el ratón pasa sobre el botón */
+    display: inline-block; /* Hace que el botón se muestre como un bloque en línea */
+    padding: 1rem 2.8rem; /* Añade relleno en los bordes del botón */
+    background: var(--main-color); /* Utiliza el color principal definido en la variable */
+    border-radius: 2.5rem; /* Redondea las esquinas del botón */
+    font-weight: 600; /* Establece un peso de fuente más grueso para que el texto destaque */
+    position: relative; /*MODIFICADO*/
+    top: -8rem; /*MODIFICADO*/
+
+}
+/* Efecto cuando se pasa el ratón sobre el botón */
+.btn:hover {
+    box-shadow: 0 0 10px var(--main-color); /* Añade sombra alrededor del botón con el mismo color principal */
+    letter-spacing: 0.1rem; /* Espacio entre las letras para hacer el texto más legible */
+    transition: box-shadow 0.3s ease; /* Animación suave para el cambio de sombra */
+}
+
+
+/* About Section */
+.about {
+    margin-top: 10rem;
+    display: flex; /* Habilita el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column;
+    gap: 2rem; /* Espacio entre elementos */
+    background: var(--second-bg-color); /* Color de fondo */
+    padding-bottom: 15rem; /* Espaciado inferior */
+}
+.about-content{
+    margin-top: 16rem;
+    margin-left: 4rem;
+
+}
+.heading {
+    font-size: 3rem; /* Tamaño del texto */
+    margin-bottom:4.rem; /* Espacio inferior */
+    text-align: center; /* Centra el texto */
+}
+#about p{
+    padding-right: 50rem;
+    margin-top: 2rem; /* Mueve el elemento hacia arriba */
+    text-align: justify;
+
+
+}
+#about h1 {
+    margin-bottom: 5rem;
+    font-size: 310%;
+    text-align: center;
+    margin-top: -10rem; /* Mueve el elemento hacia arriba */
+}
+
+.iconoHabilidades{
+    margin-right: 1rem;
+    margin-left: 1.3rem;
+    margin-top: 1rem;
+}
+#habilidadesTecnicas{
+    margin-left: 75rem;
+    margin-top: -30rem;
+    padding-right: 3rem;
+}
+#habilidadesTecnicas h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: -3.5rem; /* Mueve el elemento hacia arriba */
+    margin-bottom: 0.5rem;
+
+}
+
+.about-ico{
+    margin-left: -2rem;
+    margin-top: 1rem;
+}
+.about-ico a {
+    font-size: 2.7rem;
+    color: var(--main-color);
+    text-decoration: none;
+    margin-left: 2rem;
+}
+.about-ico i:hover{
+    transform: scale(1.2);
+}
+
+
+/* Services Section */
+.services h2 {
+    margin-bottom: 5rem;
+    font-size: 310%;
+}
+
+.services-container {
+    margin-top: -2rem;
+    display: flex;  /* Activa el modelo de flexbox */
+    justify-content: space-between;  /* Distribuye las cajas en línea con espacio entre ellas */
+    flex-wrap: nowrap;  /* Evita que las cajas se muevan a una nueva línea */
+    gap: 2rem;  /* Espacio entre las cajas */
+    
+}
+
+.services-container .services-box {
+    flex: 1 1 calc(25% - 2rem);  /* Hace que cada caja ocupe el 25% del contenedor */
+    min-width: 250px;  /* Evita que las cajas se hagan demasiado pequeñas */
+    margin: 0;  /* Elimina cualquier margen adicional */
+    background: var(--second-bg-color);
+    border: 0.2rem solid var(--bg-color); 
+
+}
+/* Estilo para el contenedor del servicio */
+.services-box {
+    text-align: center;                /* Centra el texto dentro del contenedor */
+    padding: 2rem;                     /* Espacio dentro del contenedor */
+    background: var(--second-bg-color); /* Fondo personalizado desde :root */
+    border-radius: 1rem;               /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: 0.3s ease-in-out;      /* Transición suave cuando pasa el ratón */
+    margin: 1rem;                      /* Espaciado entre los elementos */
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.services-container :hover{
+    transform: scale(1.1);
+    border-color: var(--main-color);
+}
+
+/* Estilo para la imagen dentro de services-box */
+.services-box img {
+    width: 55%;              /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;             /* Mantiene la relación de aspecto */
+    border-radius: 1rem;      /* Bordes redondeados para la imagen */
+    margin-bottom: 1.5rem;    /* Espacio debajo de la imagen */
+}
+
+/* Estilo para el título h3 */
+.services-box h3 {
+    font-size: 1.8rem;         /* Tamaño de la fuente del título */
+    font-weight: 700;          /* Fuente en negrita */
+    margin: 1rem 0;            /* Espaciado arriba y abajo */
+    color: #fff;               /* Color blanco */
+}
+
+/* Estilo para la descripción p */
+.services-box p {
+    font-size: 1.4rem;         /* Tamaño de la fuente */
+    color: #aaa;               /* Color gris claro */
+    margin-bottom: 2rem;       /* Espacio debajo de la descripción */
+}
+
+
+/* SECCIÓN PORTFOLIO */
+.portfolio {
+    background: var(--second-bg-color);
+}
+
+#portfolio-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-rows: repeat(2, auto);  /* 2 filas, altura automática */
+    gap: 35px; /* Espaciado entre los elementos */
+    padding-left: 2.5%;
+    
+}
+
+.portfolio h2 {
+    margin-bottom: 1rem;
+    margin-top: -1%;
+    font-size: 45px;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: end; /* Alinea los elementos al lado derecho */
+}
+
+.portfolio-box {
+    position: relative;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    width: 320px; /* Línea nueva */
+    cursor: pointer;
+    border-radius: 1rem;
+
+}
+
+.portfolio-box:hover{
+    transform: scale(1.04);
+}
+
+.portfolio-box img {
+    width: 100%;
+}
+
+.popUp {
+    position: absolute;
+    bottom: 0; /* Se coloca en la parte inferior */
+    left: 0;
+    width: 100%;
+    height: 38%;
+    background: rgba(39, 47, 56, 0.7); /* Gris azulado con 70% de opacidad */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; /* Invisible al inicio */
+    transform: translateY(100%); /* Se mueve hacia abajo */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    
+}
+
+.popUp h3{
+    font-size: 16px;
+}
+.portfolio-box:hover .popUp {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Sube suavemente */
+}
+
+
+/* SECCIÓN CONTACTO */
+
+.contact {
+  
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* No distribuye el espacio */
+        align-items: flex-start; /* Alinea los elementos al principio */
+        height: 300px; /* Establece la altura deseada */
+        overflow: hidden; /* Asegura que no se desborde */
+}
+
+.contact h2 {
+    margin-top: -2rem;
+    color:var(--main-color);
+    font-size: 48px;
+    animation: pulso 0.8s infinite ease-in-out;
+}
+
+@keyframes pulso {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.03);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+.contact h3 {
+    margin-top: -30rem;
+    text-align: center;
+    font-size: 24px;
+ }
+
+ .contact p{
+    margin-top: -30rem;
+    text-align: center;
+    font-size: 1.7rem;
+ }
+
+.imagen-unique{
+    background-color: red;
+    height: 0;
+    text-align: center;
+    margin-top: -30rem;
+   
+}
+
+/* Estiliza solo la imagen */
+.imagen-unique img {
+    width: 35%;  /* Limita el ancho máximo de la imagen al 10% */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto hover */
+}
+
+.imagen-unique img:hover {
+    transform: scale(1.05);  /* Efecto de aumento al pasar el ratón */
+}
+
+#pQr{
+    padding-top: 2rem;
+    font-size: small;
+    color: #aaa;
+
+}
+
+
+/*Footer */
+.footer {
+    display: flex; /* Habilita el modelo de diseño Flexbox */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en nuevas filas si es necesario */
+    padding: 2rem 9%; /* Espaciado interno: 2rem en arriba/abajo, 9% a los lados */
+    background: var(--second-bg-color); /* Establece el color de fondo usando una variable CSS */
+    position: relative;
+    
+}
+
+.footer-text{
+    display: flex;
+    font-size: 1.4rem; /* Asegúrate de que este tamaño sea intencional */
+}
+
+
+#iconos-footer i{
+    padding-left: 5rem;
+    font-size: 150%;
+    color: var(--text-color);
+}
+
+#iconos-footer i:hover{
+    color: var(--main-color);
+}
+
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+
+
+
+
+@media (max-width: 1200px){
+    .services-container {
+        flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+        justify-content: center; /* Centra los elementos si hay menos espacio */
+    }
+    .services-box {
+        flex: 1 1 calc(45% - 2rem); /* Reduce el tamaño de las cajas al 45% */
+    }
+
+    .header {
+        padding: 2rem 5%; /* Reduce el padding lateral */
+    }
+    .navbar a {
+        font-size: 1.5rem; /* Reduce el tamaño de los enlaces */
+        margin-left: 3rem;
+    }
+
+    #portfolio-items {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en lugar de 3 */
+    }
+
+}
+
+@media (max-width: 991px){
+header{
+    padding: 2rem 4%;
+}
+
+.navbar a {
+    font-size: 2.4rem;
+    margin-left: 2.5rem;
+}
+
+.home-img .overlay h2{
+    font-size: 106px;
+}
+
+.home .overlay h2 span{
+    font-size: 80px;
+}
+
+.home h3{
+    font-size: 3.5rem;
+}
+
+.home p{
+    font-size: 3.5rem;
+}
+
+.overlay h1 {
+    font-size: 3.7rem;
+}
+
+.overlay a{
+    font-size: 4.3rem;
+}
+
+.about-content h1{
+    display: none;
+}
+
+#about h2{
+    font-size: 4rem;
+}
+
+#about h3{
+    font-size: 3.8rem;
+}
+
+#about p{
+    padding-right: 0rem;
+    font-size: 3rem;
+    margin-top: 10rem;
+}
+
+.about-ico{
+    margin-top: -45rem;
+}
+
+.about-ico a{
+    font-size: 5rem;
+}
+
+#habilidadesTecnicas{
+    margin-top: 22rem;
+    margin-left: -10rem;
+    padding-left: 10rem;
+}
+
+#habilidadesTecnicas h1{
+    font-size: 4rem;
+    margin-top: 5.5rem;
+    margin-left: 3rem;
+}
+
+.iconoHabilidades{
+    width: 5.4rem;
+    height: 5.4rem;
+    margin-right: 0;
+}
+
+.services{
+    margin-bottom: 10rem;
+}
+
+.services-container .services-box{
+    min-width: 367px;
+}
+
+.services-box{
+    border-radius: 3rem;
+}
+
+.services-box h3{
+    font-size: 3.8rem
+}
+
+.services-box p{
+    font-size: 3rem;
+}
+
+.services h2 {
+    font-size: 350%; /* Reduce el tamaño del título */
+}
+
+.portfolio{
+    padding-bottom: 7rem;
+    
+}
+
+#portfolio-items {
+    grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas */
+    gap: 48px;
+    padding-left: 0;
+}
+
+.portfolio-box{
+    width: 350px;
+}
+
+.portfolio h2{
+    margin-bottom: 4rem;
+}
+
+.contact {
+    min-height: auto;
+    height: 131rem;
+}
+
+.contact h2{
+    margin-top: 3rem;
+    font-size: 70px;
+}
+
+.contact h3{
+    margin-top: -40rem;
+    font-size: 31px;
+}
+
+.contact p{
+    margin-top: -44rem;
+    font-size: 3rem;
+}
+
+#pQr{
+    font-size: 2.5rem;
+}
+
+.imagen-unique{
+    margin-top: -45rem;
+}
+
+.imagen-unique img{
+    width: 58%;
+}
+
+.footer{
+    padding: 2rem 3%;
+}
+}
+
+
+@media (max-width: 768px){
+   
+#portfolio-items {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.home {
+flex-direction: column;
+}
+
+.home-content h3{
+    font-size: 2.6rem;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+}
+
+.home-img img{
+    width: 70vw;
+    margin-top: 4rem;
+    }
+
+.about {
+    flex-direction: column-reverse;
+}
+
+.about img{
+    width: 70vw;
+}
+
+.about-img{
+    margin-top: -45rem;
+
+}
+
+.spinner{
+    margin-top: -69rem;
+}
+
+.about-content{
+    margin-top: 30rem;
+}
+
+.about-content h1{
+    font-size: 245%;
+}
+
+.about-content p{
+    font-size: 90%;
+}
+
+
+.services h2{
+    margin-bottom: 3rem;
+}
+
+.services-container :hover {
+    transform: scale(1.05); /* Reduce la escala de la animación en hover */
+}
+
+.portfolio-container{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#portfolio-items {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna para mayor legibilidad */
+    gap: 20px;
+}
+}
+
+
+@media(max-width: 617px) {
+
+    .spinner{
+        animation: none;
+        margin-top: -50rem;
+    }
+
+    #portfolio-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
+}
+
+@media (max-width: 450px) {
+
+    .menu-img{
+        width: 11rem;
+        margin-top: 7rem;
+        margin-left: -1.5rem;
+    }
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .navbar a{
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .navbar a:hover, .navbar a.active{
+        color: var(--text-color);
+    }
+
+    .home-img .overlay h2{
+        font-size: 4rem;
+    }
+
+    .home .overlay h2 span{
+        font-size: 38px;
+    }
+
+    .home-img .overlay h3,.home-img .overlay p, .home-img .overlay h1{
+        font-size: 1.5rem;
+    
+    }
+
+    .btn{
+        top: -5rem;
+    }
+
+    .overlay a{
+        font-size: 1.5rem;
+    }
+
+    #about{
+        margin-top: 4rem;
+        padding-bottom: 22rem;
+    }
+
+    .about-content{
+        margin-top: -12rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .about-content h1{
+        display: none;
+    }
+
+    #about h2{
+        font-size: 2rem;
+        margin-top: -43rem;
+    }
+
+    #about h3{
+        font-size: 1.5rem;
+    }
+
+    #about p{
+        padding-right: 0;
+        margin-top: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .about-ico{
+        margin-top: -27rem;
+    }
+
+    .about-ico a{
+        font-size: 3rem;
+    }
+
+    #habilidadesTecnicas{
+        margin-left: 0;
+        margin-top: -28rem;
+    }
+
+    #habilidadesTecnicas h1{
+        margin-left: -7rem;
+        margin-top: 66rem;
+        font-size: 2rem;
+    }
+
+    .iconosHabilidadesTecnicas{
+        margin-top: 1.5rem;
+        margin-left: -8rem;
+        margin-right: -3rem;
+    
+    }
+
+    .iconoHabilidades{
+       width: 3.4rem;
+       height: 3.4rem; 
+    }
+    
+
+    #portfolio-items {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        padding-left: 0;
+    }
+
+    .services h2{
+        font-size: 4rem;
+    }
+
+    .services-box h3{
+        font-size: 2rem;
+    }
+
+    .services-box p{
+        font-size: 1.5rem;
+    }
+
+    .services-box img{
+        width: 50%;
+    }
+
+    .services-container .services-box{
+        min-width: 17rem;
+    }
+
+    .portfolio h2{
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-box{
+        width: 30rem;
+    }
+
+    .contact{
+        padding-bottom: 23rem;
+        height: 67rem;
+    }
+
+    .contact h2{
+        margin-top: 0rem;
+        font-size: 40px;
+    }
+
+    .contact h3{
+        margin-top: 15rem;
+        font-size: 16px;
+    }
+
+    .contact p{
+        margin-top: -19rem;
+        font-size: 1.5rem;
+    }
+
+    #pQr{
+        padding-top: 30rem;
+        font-size: 1.3rem;
+    }
+
+    .imagen-unique{
+        margin-top: 1rem;
+    }
+
+    .imagen-unique img{
+        width: 61%;
+    }
+
+    .footer-text{
+        font-size: 0.8rem;
+        gap: 1rem;
+    }
+    .footer-text p{
+        padding-left:3.5rem;
+        margin-left: -4rem;
+    }
+
+    #iconos-footer i{
+        padding-left: 1rem;
+    }
+}
+
+/* Media Query para max-width: 365px */
+@media (max-width: 365px) {
+    .header {
+        display: none;
+}
+
+
+#portfolio-items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+}
+
+
+
+@media (max-width: 320px){
+
+}
+
